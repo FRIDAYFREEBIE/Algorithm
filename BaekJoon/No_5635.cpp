@@ -18,6 +18,7 @@ int main()
   {
     cin >> tempName >> tempDay >> tempMonth >> tempYear;
     
+    // 어린 나이 갱신이 필요한지 검사
     if(tempYear > lowYear)
       isUpdate = true;
     else if(tempYear == lowYear)
@@ -33,6 +34,7 @@ int main()
       }
     }
 
+  // 갱신
     if(isUpdate)
     {
       lowName = tempName;
@@ -43,6 +45,7 @@ int main()
       isUpdate = false;
     }
 
+    // 많은 나이 갱신이 필요한지 검사
     if(tempYear < highYear)
       isUpdate = true;
     else if(tempYear == highYear)
@@ -58,6 +61,7 @@ int main()
       }
     }
 
+    // 갱신
     if(isUpdate)
     {
       highName = tempName;

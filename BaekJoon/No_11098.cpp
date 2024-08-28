@@ -14,6 +14,7 @@ int main()
 
   int p;
 
+  // 비싼 선수 탐색
   for(i; i < n; i++)
   {
     cin >> p;
@@ -35,6 +36,7 @@ int main()
     }
   }
 
+  // 출력
   for(int k = 0; k <= i; k++)
   {
     cout << playerName[k] << "\n";
