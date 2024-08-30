@@ -2,6 +2,7 @@
   "files.associations": {
     ".fantomasignore": "ignore",
     "iostream": "cpp",
-    "ostream": "cpp"
+    "ostream": "cpp",
+    "xiosbase": "cpp"
   }
 }
