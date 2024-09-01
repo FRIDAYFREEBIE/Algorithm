@@ -7,6 +7,9 @@
     "xstring": "cpp",
     "utility": "cpp",
     "xutility": "cpp",
-    "initializer_list": "cpp"
+    "initializer_list": "cpp",
+    "format": "cpp",
+    "iosfwd": "cpp",
+    "algorithm": "cpp"
   }
 }
