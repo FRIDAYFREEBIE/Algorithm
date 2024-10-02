@@ -53,6 +53,7 @@
     "xmemory": "cpp",
     "xtr1common": "cpp",
     "vector": "cpp",
-    "list": "cpp"
+    "list": "cpp",
+    "queue": "cpp"
   }
 }
