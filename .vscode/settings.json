@@ -54,6 +54,10 @@
     "xtr1common": "cpp",
     "vector": "cpp",
     "list": "cpp",
-    "queue": "cpp"
+    "queue": "cpp",
+    "stack": "cpp",
+    "array": "cpp",
+    "deque": "cpp",
+    "span": "cpp"
   }
 }
