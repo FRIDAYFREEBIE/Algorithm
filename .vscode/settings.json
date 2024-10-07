@@ -58,6 +58,7 @@
     "stack": "cpp",
     "array": "cpp",
     "deque": "cpp",
-    "span": "cpp"
+    "span": "cpp",
+    "xtree": "cpp"
   }
 }
