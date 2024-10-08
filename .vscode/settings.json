@@ -59,6 +59,11 @@
     "array": "cpp",
     "deque": "cpp",
     "span": "cpp",
-    "xtree": "cpp"
+    "xtree": "cpp",
+    "map": "cpp",
+    "ranges": "cpp",
+    "set": "cpp",
+    "unordered_set": "cpp",
+    "xhash": "cpp"
   }
 }
