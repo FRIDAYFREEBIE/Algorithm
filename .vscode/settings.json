@@ -64,6 +64,7 @@
     "ranges": "cpp",
     "set": "cpp",
     "unordered_set": "cpp",
-    "xhash": "cpp"
+    "xhash": "cpp",
+    "unordered_map": "cpp"
   }
 }
