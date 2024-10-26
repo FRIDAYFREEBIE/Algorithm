@@ -7,7 +7,10 @@ int main() {
   cin.tie(0);
   cout.tie(0);
 
-  
+  long long n;
+  cin >> n;
+
+  cout << n * 4 << "\n";
 
   return 0;
 }
