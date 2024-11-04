@@ -1,77 +1,77 @@
 #include <iostream>
+#include <vector>
 #include <queue>
-#include <cstring> // memset
+#include <algorithm>
+
 
 using namespace std;
 
-int board[101];   // 1 = 사다리, -1 = 뱀
-int cnt[101];     // 주사위 횟수
-int ladder[101];  // a -> b
-int snake[101];   // a -> b
+void DFS(int current);
+void BFS(int start);
+
+vector<int> adj[1001];
+bool visitDFS[1001];
+bool visitBFS[1001];
 
 int main() {
   ios::sync_with_stdio(false);
   cin.tie(0);
   cout.tie(0);
 
-  int n, m;
-  cin >> n >> m;
+  int n, m, v;
+  cin >> n >> m >> v;
 
-  memset(cnt, -1, sizeof(cnt));
-  
-  for(int i = 0; i < n; i++){
+  while(m--){
     int a, b;
     cin >> a >> b;
-    board[a] = 1;
-    ladder[a] = b;
+    adj[a].push_back(b);
+    adj[b].push_back(a);
   }
 
-  for(int i = 0; i < m; i++){
-    int a, b;
-    cin >> a >> b;
-    board[a] = -1;
-    snake[a] = b;
+  for(int i = 1; i <= n; i++){
+    sort(adj[i].begin(), adj[i].end());
   }
 
+  DFS(v);
+  cout << "\n";
+
+  BFS(v);
+
+  return 0;
+}
+
+void DFS(int current){
+  visitDFS[current] = true;
+
+  cout << current << " ";
+
+  for(auto next : adj[current]){
+    if(visitDFS[next]){
+      continue;
+    }
+
+    DFS(next);
+  }
+}
+
+void BFS(int start){
   queue<int> q;
-  q.push(1);
-  cnt[1] = 0;
+  q.push(start);
+  visitBFS[start] = true;
 
   while(!q.empty()){
     int current = q.front();
     q.pop();
 
-    for(int dice = 6; dice > 0; dice--){
-      int nPos = current + dice;
+    cout << current << " ";
 
-      // 범위
-      if (nPos > 100) continue;
-
-      // 방문 여부
-      if (cnt[nPos] != -1) continue;
-
-      // 사다리칸
-      if(ladder[nPos] != 0){
-        nPos = ladder[nPos];
+    for(auto next : adj[current]){
+      if(visitBFS[next]){
+        continue;
       }
 
-      // 뱀칸
-      if(snake[nPos] != 0){
-        nPos = snake[nPos];
-      }
-
-      // nPos가 사다리, 뱀칸에서 갱신된 경우
-      if(cnt[nPos] == -1){
-        cnt[nPos] = cnt[current] + 1;
-        q.push(nPos);
-      }
-
-      if (nPos == 100) {
-        cout << cnt[100] << "\n";
-        return 0;
-      }
+      visitBFS[next] = true;
+      q.push(next);
     }
   }
-
-  return 0;
 }
