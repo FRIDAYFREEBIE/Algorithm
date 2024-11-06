@@ -1,10 +1,16 @@
 #include <iostream>
+#include <vector>
 #include <stack>
+#include <cstring>
 
 using namespace std;
 
-int student[1000001];
-int visit[1000001];
+int student[100001];
+bool visit[100001];
+bool finish[100001];
+int cnt = 0;
+
+void DFS(int current);
 
 int main() {
   ios::sync_with_stdio(false);
@@ -18,23 +24,42 @@ int main() {
     int n;
     cin >> n;
 
-    // 초기화
-    for(int i = 0; i < n; i++){
-      student[i] = 0;
-      visit[i] = 0;
-    }
-
-    // 입력
-    for(int i = 0; i < n; i++){
+    for (int i = 1; i <= n; i++) {
       cin >> student[i];
     }
-  
-    visit[0] = 1;
-    stack<int> s;
-    s.push(0);
 
-    
+    memset(visit, false, sizeof(visit));
+    memset(finish, false, sizeof(finish));
+    cnt = 0;
+
+    for (int i = 1; i <= n; i++) {
+      if (!visit[i]) {
+        DFS(i);
+      }
+    }
+
+    cout << n - cnt << "\n";
+  }
+  
+  return 0;
+}
+
+void DFS(int current){
+  visit[current] = true;
+  int next = student[current];
+
+  if(!visit[next]){
+    DFS(next);
+  }
+  else if(!finish[next]){
+    int temp = next;
+    cnt++;
+
+    while(temp != current){
+      cnt++;
+      temp = student[temp];
+    }
   }
 
-  return 0;
+  finish[current] = true;
 }
