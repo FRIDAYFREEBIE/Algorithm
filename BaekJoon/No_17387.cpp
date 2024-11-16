@@ -16,6 +16,10 @@ int CCW(pair<int,int>a,pair<int,int>b,pair<int,int>c){
 bool func(){
   int ab = CCW(p1,p2,p3) * CCW(p1,p2,p4);
   int cd = CCW(p3,p4,p1) * CCW(p3,p4,p2);
+
+  if (ab == 0 && cd == 0)
+    return max(p1.first, p2.first) >= min(p3.first, p4.first) && max(p3.first, p4.first) >= min(p1.first, p2.first)
+    && max(p1.second, p2.second) >= min(p3.second, p4.second) && max(p3.second, p4.second) >= min(p1.second, p2.second);
   
   return ab <= 0 && cd <= 0;
 }
