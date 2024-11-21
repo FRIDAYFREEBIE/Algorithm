@@ -15,3 +15,10 @@
 [![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?boj=fridayfreebie)](https://solved.ac/fridayfreebie/)
 
 ---
+
+## 🗓️ 이번 주 계획
+- **탐색 기법 공부**:  
+   - 투 포인터, 슬라이딩 윈도우
+   - BFS, DFS
+
+---
