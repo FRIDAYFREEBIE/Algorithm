@@ -25,9 +25,15 @@ int main() {
     pq.push(temp);
   }
 
-  int sum = 0;
-  while(!pq.empty()){
-  
+  int sum = 0, a = 0, b = 0;
+  while(pq.size() != 1){
+    a = pq.top();
+    pq.pop();
+    b = pq.top();
+    pq.pop();
+
+    sum += a + b;
+    pq.push(a + b);
   }
 
   cout << sum << "\n";
