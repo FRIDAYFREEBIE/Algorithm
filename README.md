@@ -11,15 +11,6 @@
 
 ---
 
-## 🔑 주요 기술 사항
-- **C++**: 프로그래밍 언어
-- **자료구조**: 스택, 큐, 덱, 리스트, 트리, 그래프, 해시맵, 우선순위 큐
-- **알고리즘 기법**: 그리디, 분할 정복, 동적 프로그래밍(DP), 백트래킹, 슬라이딩 윈도우
-- **탐색 기법**: DFS, BFS, 투 포인터, 이분 탐색, 이진 탐색
-- **기타**: 기하학(CCW), 문자열
-
----
-
 ## 📈 진행 상황
 [![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?boj=fridayfreebie)](https://solved.ac/fridayfreebie/)
 
