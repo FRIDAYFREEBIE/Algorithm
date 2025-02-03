@@ -1,0 +1,8 @@
+{
+  "files.associations": {
+    ".fantomasignore": "ignore",
+    "xiosbase": "cpp",
+    "iostream": "cpp",
+    "queue": "cpp"
+  }
+}
