@@ -74,15 +74,18 @@ void BFS(int i){
 }
 
 int LCA(int a, int b){
+  // 더 깊이가 깊은 노드를 a에 놓는다다
   if(depth[a] < depth[b]){
     int temp = a;
     a = b;
     b = temp;
   }
 
+  // a와 b의 깊이가 같아질 때 까지 a의 조상을 찾아 올라감
   while(depth[a] != depth[b])
     a = parent[a];
 
+    // 깊이가 같을 때 최소 공통 조상 찾기기
   while(a != b){
     a = parent[a];
     b = parent[b];
