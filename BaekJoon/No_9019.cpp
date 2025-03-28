@@ -18,7 +18,7 @@ int main() {
 
   while(t--){
     cin >> a >> b;
-
+    
     
   }
 
